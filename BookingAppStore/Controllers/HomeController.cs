@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using BookingAppStore.Models;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace BookingAppStore.Controllers
 {
@@ -27,6 +28,11 @@ namespace BookingAppStore.Controllers
         {
             ViewBag.BookID = id;
 
+            ViewBag.BookName = (from book in db.Books
+                               where book.Id == id
+                               select book.Name).First();
+            
+
             return View();
         }
 
@@ -44,5 +50,27 @@ namespace BookingAppStore.Controllers
 
             return Content($"thanks, {purchase.Name} for purchasing");
         }
+
+        [HttpGet]
+        public ActionResult SearchBook()
+        {
+            return View();
+        }
+
+        public ActionResult SearchBook(string Author, string BookName)
+        {
+            foreach (var book in db.Books)
+            {
+                if (book.Author == Author && book.Name == BookName)
+                {
+                    ViewBag.BookID = book.Id;
+                    return Redirect("Buy/" + book.Id);
+                }
+            }
+
+            return Content("Nothing found");
+        }
+
+
     }
 }
