@@ -1,24 +1,43 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    font-size: 25px;
+    font-family: oblique;
+    font-weight: normal;
+    padding-top: 0px;
+    padding-left: 0px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+a {
+
+    text-decoration: none;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.menu {
+    padding-left: 20px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+
+
+table {
+    vertical-align: middle;
+    text-align: left;
+}
+
+
+td {
+    padding-right: 10px;
+}
+
+input {
+    width: 150px;
+}
+
+
+.indx {
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.buyForm {
+    margin-left: 100px;
+    margin-top: 100px;
 }
