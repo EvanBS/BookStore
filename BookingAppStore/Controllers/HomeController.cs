@@ -42,8 +42,7 @@ namespace BookingAppStore.Controllers
 
             db.SaveChanges();
 
-            return Content($"thanks, {purchase.Name} purch id {purchase.PurchaseId} " +
-                $"book id {purchase.BookId}");
+            return Content($"thanks, {purchase.Name} for purchasing");
         }
     }
 }
