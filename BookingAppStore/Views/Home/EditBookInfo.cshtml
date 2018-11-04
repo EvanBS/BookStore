@@ -1,0 +1,38 @@
+﻿@model BookingAppStore.Models.Book
+
+@{
+    ViewBag.Title = "Edit book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Book @Model.Id editor</h2>
+
+<div class="editPage">
+    @using (Html.BeginForm("EditBookInfo", "Home", FormMethod.Post))
+    {
+        <fieldset>
+            <legend class="legend1">Редактирование книги @Model.Name</legend>
+            @Html.HiddenFor(m => m.Id)
+
+            <p>
+                @Html.LabelFor(m => m.Name, "Название книги")
+                <br />
+                @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control Search input" }, })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Author, "Автор")
+                <br />
+                @Html.EditorFor(m => m.Author, new { htmlAttributes = new { @class = "form-control Search input" }, })
+
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Price, "Цена")
+                <br />
+
+                @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control Search input" }, })
+            </p>
+            <p><input class="btn btn-primary" type="submit" value="Отправить" /></p>
+
+        </fieldset>
+    }
+</div>

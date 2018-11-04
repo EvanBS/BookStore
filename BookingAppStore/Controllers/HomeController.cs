@@ -36,8 +36,6 @@ namespace BookingAppStore.Controllers
         public ActionResult Buy(Purchase purchase)
         {
 
-            //purchase.PurchaseId = db.Purchases.Count() + 1;
-
             purchase.Date = DateTime.Now;
 
             db.Purchases.Add(purchase);
@@ -67,6 +65,27 @@ namespace BookingAppStore.Controllers
             return Content("Nothing found");
         }
 
+        [HttpGet]
+        public ActionResult EditBookInfo(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
 
+            var book = db.Books.Find(id); // by primary key
+
+            if (book == null) return HttpNotFound();
+
+            return View(book);
+        }
+
+        [HttpPost]
+        public ActionResult EditBookInfo(Book book)
+        {
+            db.Entry(book).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
