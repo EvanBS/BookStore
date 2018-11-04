@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using BookingAppStore.Models;
 using System.Threading.Tasks;
-using System.Linq;
+
 
 namespace BookingAppStore.Controllers
 {
@@ -16,11 +16,7 @@ namespace BookingAppStore.Controllers
 
         public ActionResult Index()
         {
-            var books = db.Books;
-
-            ViewBag.Books = books;
-
-            return View();
+            return View(db.Books);
         }
 
         [HttpGet]
@@ -40,7 +36,7 @@ namespace BookingAppStore.Controllers
         public ActionResult Buy(Purchase purchase)
         {
 
-            purchase.PurchaseId = db.Purchases.Count() + 1;
+            //purchase.PurchaseId = db.Purchases.Count() + 1;
 
             purchase.Date = DateTime.Now;
 

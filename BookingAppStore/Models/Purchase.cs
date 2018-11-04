@@ -13,7 +13,7 @@ namespace BookingAppStore.Models
 
         public string Surname { get; set; }
 
-        public string Adderss { get; set; }
+        public string Address { get; set; }
 
         public int BookId { get; set; }
 
