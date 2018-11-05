@@ -87,5 +87,48 @@ namespace BookingAppStore.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+
+
+        [HttpGet]
+        public ActionResult AddBook()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddBook(Book book)
+        {
+            if (book != null)
+            {
+                db.Books.Add(book);
+                db.SaveChanges();
+            }
+
+            
+            return RedirectToAction("Index");
+        }
+
+
+
+
+        [HttpGet]
+        public ActionResult DeleteBook(int? id)
+        {
+            if (id == null) return HttpNotFound();
+            var book = db.Books.Find(id);
+            
+            return View(book);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteBook(Book book)
+        {
+            db.Books.Remove(book);
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,0 +1,31 @@
+﻿@model BookingAppStore.Models.Book
+
+@{
+    ViewBag.Title = "DeleteBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteBook</h2>
+<div class="editPage">
+    <dl>
+        <dt>Название</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>Автор</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>Цена</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("DeleteBook", "Home", FormMethod.Post))
+    {
+        <input id="deleteSubmit" type="submit" class="btn btn-primary" value="Удалить" />
+    }
+</div>

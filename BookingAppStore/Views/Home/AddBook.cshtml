@@ -1,0 +1,30 @@
+﻿@model BookingAppStore.Models.Book
+
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add new book</h2>
+
+<div class="editPage">
+    @using (Html.BeginForm("AddBook", "Home", FormMethod.Post))
+    {
+    <fieldset>
+        @Html.LabelFor(model => model.Name, "Название книги")
+        <br />
+        @Html.EditorFor(model => model.Name)
+        <br /><br />
+        @Html.LabelFor(model => model.Author, "Автор")
+        <br />
+        @Html.EditorFor(model => model.Author)
+        <br /><br />
+        @Html.LabelFor(model => model.Price, "Цена")
+        <br />
+        @Html.EditorFor(model => model.Price)
+        <br /><br />
+        <p><input id="submitButton" class="btn btn-primary" type="submit" value="Отправить" /></p>
+
+    </fieldset>
+    }
+</div>

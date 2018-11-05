@@ -205,7 +205,10 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\SubmitScript.js" />
     <Content Include="Views\Home\EditBookInfo.cshtml" />
+    <Content Include="Views\Home\AddBook.cshtml" />
+    <Content Include="Views\Home\DeleteBook.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
