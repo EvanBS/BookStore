@@ -15,5 +15,7 @@ namespace BookingAppStore.Models
 
         public int Price { get; set; }
 
+        public float discount { get; set; }
+
     }
 }

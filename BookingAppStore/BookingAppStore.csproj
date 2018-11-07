@@ -159,6 +159,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811041402312_InitialCreate.cs" />
+    <Compile Include="Migrations\201811041402312_InitialCreate.Designer.cs">
+      <DependentUpon>201811041402312_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811071204043_MigrateDBExample.cs" />
+    <Compile Include="Migrations\201811071204043_MigrateDBExample.Designer.cs">
+      <DependentUpon>201811071204043_MigrateDBExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookContext.cs" />
     <Compile Include="Models\Purchase.cs" />
@@ -276,7 +285,6 @@
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
@@ -287,6 +295,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811041402312_InitialCreate.resx">
+      <DependentUpon>201811041402312_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811071204043_MigrateDBExample.resx">
+      <DependentUpon>201811071204043_MigrateDBExample.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
